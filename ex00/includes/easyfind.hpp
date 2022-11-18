@@ -1,20 +1,20 @@
 #pragma once
 
 #include <iostream>
-#include <map>
 #include <vector>
 #include <cctype>
 #include <algorithm>
 
 template<typename T>
-typename T::iterator	easyfind(T & arg, int n)
+typename T::iterator	easyfind(T & input, int n)
 {
-	typename T::iterator	it;
-	it = std::find(arg.begin, arg.end, n);
-	std::cout << *it << std::endl;
-	if (it != arg.end())
-		std::cout << "Element found in myvector: " << *it << '\n';
+	typename T::iterator it;
+	it = std::find(input.begin(), input.end(), n);
+	if (it != input.end())
+	{
+		std::cout << "Element found in myvector: " << *it << std::endl;
+	}
 	else
-		std::cout << "Element not found in myvector\n";
+		throw std::overflow_error("Element not found in myvector\n");
 	return it;
 }

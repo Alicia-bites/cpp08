@@ -1,6 +1,5 @@
 #include "easyfind.hpp"
 
-
 int main(int argc, char **argv)
 {
 	if (argc != 2)
@@ -11,12 +10,49 @@ int main(int argc, char **argv)
 	std::string	arg(argv[1]);
 	if (arg == "1")
 	{
-		int myints[] = {10, 20, 30, 40};
-		std::vector<int> myvector (myints, myints+4);
-		std::vector<int>iterator it;
+		try
+		{
+			int myints[] = {10, 20, 30, 40};
+			std::vector<int> myvector (myints, myints+4);
+			std::vector<int>::iterator it;
 
-		it = easyfind(myints, 30);
-		return 0;
+			it = easyfind(myvector, 30);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
+	if (arg == "2")
+	{
+		try
+		{
+			int myints[] = {10, 20, 30, 40};
+			std::vector<int> myvector (myints, myints+4);
+			std::vector<int>::iterator it;
+
+			it = easyfind(myvector, 100);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	if (arg == "3")
+	{
+		try
+		{
+			int myints[] = {};
+			std::vector<int> myvector (myints, myints);
+			std::vector<int>::iterator it;
+
+			it = easyfind(myvector, 100);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	return 0;
 	
 }
