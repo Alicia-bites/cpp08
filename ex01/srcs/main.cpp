@@ -8,6 +8,7 @@ int main(int argc, char **argv)
 		return 0;
 	}
 	int arg = atoi(argv[1]);
+	srand(time(NULL));
 	if (arg == 1)
 	{
 			std::cout << CADETBLUE2
@@ -68,15 +69,18 @@ int main(int argc, char **argv)
 	{
 		Span	big(10000);
 		for (int i = 0; i < 10000; i++)
-			big.addNumber(i);
-		std::cout << big << std::endl;
+			big.addNumber(rand());
+		// std::cout << big << std::endl;
+		std::cout << big.longestSpan() << std::endl;
 	}
 	if (arg == 5)
 	{
 		Span	ultraBig(300000);
 		for (int i = 0; i < 300000; i++)
-			ultraBig.addNumber(i);
-		std::cout << ultraBig << std::endl;
+			ultraBig.addNumber(rand());
+		// std::cout << ultraBig << std::endl;
+		std::cout << ultraBig.shortestSpan() << std::endl;
+
 	}
 	return 0;
 }
