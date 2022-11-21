@@ -25,9 +25,14 @@ class Span
 		static void			print(const int & n);
 		void				displayContent(std::ostream& o) const;
 
-		void				addNumber(unsigned int newNumber);
+		void				addNumber(int newNumber);
 		unsigned int		shortestSpan();
 		int					longestSpan();
+		void				addSequenceToFront(std::vector<int> inputVector, std::vector<int>::iterator begin,
+								std::vector<int>::iterator end);
+		void				addSequenceToBack(std::vector<int> inputVector, std::vector<int>::iterator begin,
+								std::vector<int>::iterator end);
+							
 };
 
 std::ostream&	operator<<(std::ostream & o, const Span & rhs);

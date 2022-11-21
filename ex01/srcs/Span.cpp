@@ -65,12 +65,13 @@ void	Span::print(const int & n)
 
 // -- SUBJECT EXPLICIT REQUIREMENTS --------------------------------------------
 
-void	Span::addNumber(unsigned int newNumber)
+void	Span::addNumber(int newNumber)
 {
-	if (storage_.size() < storage_.max_size())
+	if (storage_.size() < n_)
 		storage_.push_back(newNumber);
 	else
-		throw std::overflow_error("Vector is full");
+		throw std::overflow_error("storage is full, cannot add any more numbers");
+	std::cout << DODGERBLUE1 << "Added " << newNumber << " to storage" << RESET << std::endl;
 }
 
 unsigned int Span::shortestSpan()
@@ -95,6 +96,23 @@ int Span::longestSpan()
 	std::vector<int> sorted = storage_;
     std::sort(sorted.begin(), sorted.end());
     return (sorted.at(size - 1) - sorted.at(0));
+}
+
+void	Span::addSequenceToFront(std::vector<int> inputVector, std::vector<int>::iterator begin,
+		std::vector<int>::iterator end)
+{
+	if (inputVector.size() > (n_ - storage_.size()))
+		throw std::out_of_range("storage is full, cannot add any more numbers");
+	std::copy(begin, end, std::inserter(storage_, storage_.begin()));
+}
+
+void	Span::addSequenceToBack(std::vector<int> inputVector, std::vector<int>::iterator begin,
+		std::vector<int>::iterator end)
+{
+	if (inputVector.size() > (n_ - storage_.size()))
+		throw std::out_of_range("storage is full, cannot add any more numbers");
+	std::copy(begin, end, std::back_inserter(storage_));
+	
 }
 
 // -- GETTERS ----------------------------------------------------
