@@ -72,7 +72,6 @@ int main(int argc, char **argv)
 			Span	big(10000);
 			for (int i = 0; i < 10000; i++)
 				big.addNumber(rand());
-			// std::cout << big << std::endl;
 			std::cout << big.longestSpan() << std::endl;
 		}
 		if (arg == 5)
@@ -80,7 +79,6 @@ int main(int argc, char **argv)
 			Span	ultraBig(300000);
 			for (int i = 0; i < 300000; i++)
 				ultraBig.addNumber(rand());
-			// std::cout << ultraBig << std::endl;
 			std::cout << ultraBig.shortestSpan() << std::endl;
 		}
 		if (arg == 6)
@@ -132,8 +130,5 @@ int main(int argc, char **argv)
 	{
 		std::cerr << RED1 << e.what() << RESET << '\n';
 	}
-
-	
-
 	return 0;
 }

@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <map>
 #include "colors.hpp"
 
 class Span
