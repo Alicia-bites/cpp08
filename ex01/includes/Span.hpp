@@ -15,8 +15,8 @@
 class Span
 {
 	private:
-		unsigned int	n_;
-        std::vector<int> storage_;
+		unsigned int		n_;
+        std::vector<int>	storage_;
 		
 	public:
 		Span(void);
