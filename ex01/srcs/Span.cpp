@@ -82,7 +82,7 @@ unsigned int Span::shortestSpan()
 	std::vector<int> sorted = storage_;
 	std::sort(sorted.begin(), sorted.end());
 	unsigned int x = (unsigned int)sorted[1] - (unsigned int)sorted[0];
-	for (unsigned int n = 1; n < size; n++)
+	for (unsigned int n = 1; n < (size - 1); n++)
 		if (x > (unsigned int)sorted[n + 1] - (unsigned int)sorted[n])
 			x = (unsigned int)sorted[n + 1] - (unsigned int)sorted[n];
 	return (x);
