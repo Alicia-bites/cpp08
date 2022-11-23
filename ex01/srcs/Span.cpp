@@ -70,7 +70,6 @@ void	Span::addNumber(int newNumber)
 		storage_.push_back(newNumber);
 	else
 		throw std::overflow_error("storage is full, cannot add any more numbers");
-	std::cout << DODGERBLUE1 << "Added " << newNumber << " to storage" << RESET << std::endl;
 }
 
 unsigned int Span::shortestSpan()
