@@ -3,7 +3,14 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include "colors.hpp"
+
+# define CADETBLUE2 "\033[38;5;73m"
+# define CADETBLUE1 "\033[38;5;72m"
+# define DARKORANGE1 "\033[38;5;208m"
+# define DARKRED2 "\033[38;5;88m"
+# define RED1 "\033[38;5;196m"
+# define DODGERBLUE1 "\033[38;5;33m"
+# define RESET "\033[0m"
 
 class Span
 {

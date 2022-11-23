@@ -26,10 +26,7 @@ Span::~Span()
 Span	&Span::operator=(const Span & rhs)
 {
 	if (this != &rhs)
-	{
 		storage_ = rhs.storage_;
-		// std::copy(storage_.begin(), storage_.end(), rhs.storage_.begin());
-	}
 	return *this;
 }
 
@@ -79,6 +76,7 @@ unsigned int Span::shortestSpan()
     unsigned int size = storage_.size();
 	if (size <= 1)
 		throw std::overflow_error("Only one element in storage.\n");
+	
 	std::vector<int> sorted = storage_;
     std::sort(sorted.begin(), sorted.end());
     unsigned int x = sorted[1] - sorted[0];

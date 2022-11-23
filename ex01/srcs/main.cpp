@@ -125,6 +125,24 @@ int main(int argc, char **argv)
 			gargantua.addSequenceToBack(v, v.begin(), v.end());
 			std::cout << gargantua << std::endl;
 		}
+		if (arg == 9)
+		{
+			Span a(3);
+			a.addNumber(1);
+			a.addNumber(2);
+			a.addNumber(3);
+			std::cout << "a contains : " << a << std::endl;
+			Span b(a);
+			std::cout << "b contains : " << b << std::endl;
+
+			Span c(2);
+			c.addNumber(200);
+			c.addNumber(100);
+			std::cout << "c contains : " << c << std::endl;
+			Span d;
+			d = c;
+			std::cout << "d contains : " << d << std::endl;
+		}
 	}
 	catch(const std::exception& e)
 	{
