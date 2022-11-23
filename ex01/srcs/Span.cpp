@@ -2,6 +2,8 @@
 
 // default constructor
 Span::Span()
+: n_(0)
+, storage_(0)
 {}
 
 // constructor param1
@@ -73,17 +75,17 @@ void	Span::addNumber(int newNumber)
 
 unsigned int Span::shortestSpan()
 {
-    unsigned int size = storage_.size();
+	unsigned int size = storage_.size();
 	if (size <= 1)
 		throw std::overflow_error("Only one element in storage.\n");
 	
 	std::vector<int> sorted = storage_;
-    std::sort(sorted.begin(), sorted.end());
-    unsigned int x = sorted[1] - sorted[0];
-    for (unsigned int n = 1; n < size; n++)
-        if (x > (unsigned int)(sorted[n + 1] - sorted[n]))
-            x = sorted[n + 1] - sorted[n];
-    return (x);
+	std::sort(sorted.begin(), sorted.end());
+	unsigned int x = sorted[1] - sorted[0];
+	for (unsigned int n = 1; n < size; n++)
+		if (x > (unsigned int)(sorted[n + 1] - sorted[n]))
+			x = sorted[n + 1] - sorted[n];
+	return (x);
 }
 
 int Span::longestSpan()
